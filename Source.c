@@ -203,6 +203,7 @@ void fillRBTree(Node** root, Queue q)
     insert(root, q.data[q.rear]);
 }
 
+//Вывод дерева
 void printTree(Node* root)
 {
     if (root == NULL)
