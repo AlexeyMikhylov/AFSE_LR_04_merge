@@ -17,7 +17,7 @@ typedef struct Tree
     struct Node* left, * right, * parent;
 } Node;
 
-//создание новогого красного потомка
+//создание нового красного потомка
 Node* createNode(int value)
 {
     Node* newNode = (Node*)malloc(sizeof(Node));
