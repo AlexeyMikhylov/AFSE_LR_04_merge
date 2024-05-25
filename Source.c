@@ -110,29 +110,6 @@ void enqueue(Queue* q, int value)
     q->data[q->rear] = value;
 }
 
-//удаление очереди<-
-int dequeue(Queue* q)
-{
-    if (isEmpty(q))
-    {
-        printf("Queue is empty\n");
-        return -1;
-    }
-    int value = q->data[q->front];
-    
-    if (q->front == q->rear)
-    {
-        q->front = -1;
-        q->rear = -1;
-    }
-    else
-    {
-        q->front = (q->front + 1) % MAX_SIZE;
-    }
-    return value;
-}
-//->delete
-
 //Сортировка очередей
 void merge(Queue* q, int left, int mid, int right)
 {
@@ -214,7 +191,7 @@ void printQueue(Queue q, char message[64])
     printf("%d\n\n", q.data[q.rear]);
 }
 
-//
+//Заполнение дерева очередью
 void fillRBTree(Node** root, Queue q)
 {
     int i = q.front;
@@ -270,14 +247,14 @@ int main()
     printQueue(q, "Sorted queue");
 
     //инициализируем дерево
-    Node* root = NULL;
+    Node* peak = NULL;
 
     //заполняем дерево 
-    fillRBTree(&root, q);
+    fillRBTree(&peak, q);
 
     //вывод дерева
-    printf("Tree:\n\n");
-    printTree(root);
+    printf("Red and Black Tree:\n\n");
+    printTree(peak);
 
     printf("\n\n");
     return 0;
