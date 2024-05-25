@@ -3,11 +3,13 @@
 
 #define MAX_SIZE 100
 
+//кольцевая очередь
 typedef struct {
     int data[MAX_SIZE];
     int front, rear;
 } Queue;
 
+//Инициализация очереди
 void initQueue(Queue* q) {
     q->front = -1;
     q->rear = -1;
