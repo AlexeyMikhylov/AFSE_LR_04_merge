@@ -4,32 +4,39 @@
 #define MAX_SIZE 100
 
 //кольцевая очередь
-typedef struct {
+typedef struct
+{
     int data[MAX_SIZE];
     int front, rear;
 } Queue;
 
 //Инициализация очереди
-void initQueue(Queue* q) {
+void initQueue(Queue* q)
+{
     q->front = -1;
     q->rear = -1;
 }
 
-int isFull(Queue* q) {
+int isFull(Queue* q)
+{
     return (q->rear + 1) % MAX_SIZE == q->front;
 }
 
-int isEmpty(Queue* q) {
+int isEmpty(Queue* q)
+{
     return q->front == -1;
 }
 
 //добавление элемента в очередь
-void enqueue(Queue* q, int value) {
-    if (isFull(q)) {
+void enqueue(Queue* q, int value)
+{
+    if (isFull(q))
+    {
         printf("Queue is full\n");
         return;
     }
-    if (isEmpty(q)) {
+    if (isEmpty(q))
+    {
         q->front = 0;
     }
     q->rear = (q->rear + 1) % MAX_SIZE;
