@@ -4,10 +4,10 @@
 #define MAX_SIZE 100
 
 //красно-черное дерево
-typedef enum Color
+typedef enum Colors
 {
-    RED,
-    BLACK
+    black,
+    red
 } Color;
 
 typedef struct Tree
@@ -22,7 +22,7 @@ Node* createNode(int value)
 {
     Node* newNode = (Node*)malloc(sizeof(Node));
     newNode->value = value;
-    newNode->color = RED;
+    newNode->color = red;
     newNode->left = NULL;
     newNode->right = NULL;
     newNode->parent = NULL;
